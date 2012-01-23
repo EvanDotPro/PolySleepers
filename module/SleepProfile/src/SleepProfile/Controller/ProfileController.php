@@ -21,8 +21,17 @@ class ProfileController extends ActionController
         $e           = $this->getEvent();
         $routeMatch  = $e->getRouteMatch();
         $username    = $routeMatch->getParam('username');
+        $user        = $userService->getByUsername($username);
 
-        return array('username' => $username);
+        if (!$user) {
+            $response = $this->getResponse();
+            $response->setStatusCode(404);
+            return array(
+                'error' => 'User not found',
+            );
+        }
+
+        return array('user' => $user);
     }
 
     public function getUserService()

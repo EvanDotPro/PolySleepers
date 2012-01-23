@@ -1,2 +1,56 @@
-<h3><?php echo $username ?>'s Profile</h3>
-<p>Coming soon...</p>
+<ul class="breadcrumb">
+    <li><a href="<?php echo $this->url('home') ?>">Home</a> <span class="divider">/</span></li>
+    <li><a href="#">Users</a> <span class="divider">/</span></li>
+    <li class="active"><?php echo $user->getUsername() ?></li>
+</ul>
+<div class="page-header"><h3><?php echo $user->getUsername() ?>'s Profile <span class="label">Currently Napping</span></h3></div>
+<div class="row">
+    <div class="span2"><?php echo $this->gravatar($user->getEmail()) ?></div>
+    <div class="span14">
+        <div class="row">
+            <div class="span2"><strong>Schedule:</strong></div>
+            <div class="span3">Strict Uberman, 6x20</div>
+        </div>
+        <div class="row">
+            <div class="span2"><strong>Current Phase:</strong></div>
+            <div class="span3">Adaptation</div>
+        </div>
+        <div class="row">
+            <div class="span2"><strong>Status:</strong></div>
+            <div class="span3">Nap in progress (T-08:14)</div>
+        </div>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date/Time</th>
+            <th>Oversleep</th>
+            <th>Difficulty Waking</th>
+            <th>Dreams</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Jan 23, 00:00</td>
+            <td>No</td>
+            <td>No</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Jan 22, 20:00</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Jan 22, 16:00</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+        </tr>
+    </tbody>
+</table>
+
+
